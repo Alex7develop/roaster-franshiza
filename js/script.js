@@ -257,3 +257,5 @@ $(function () {
 		inputs.not(t).add(paras.not(matchedPara)).removeClass("active");
 	});
 });
+
+console.log('%CWOTTTTT', 'color: teal; font-size: 46px;');
