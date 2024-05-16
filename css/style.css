@@ -1714,7 +1714,7 @@ textarea::placeholder {
 /* Стили для закрепленной вкладки */
 .sticky-tab {
   position: fixed;
-  top: 20px; /* Положение кнопки относительно нижней границы окна */
+  top: 30px; /* Положение кнопки относительно нижней границы окна */
   right: 20px; /* Положение кнопки относительно правой границы окна */
   background-color: #ac1010; /* Цвет фона кнопки */
   color: white; /* Цвет текста на кнопке */
@@ -1734,13 +1734,53 @@ textarea::placeholder {
 }
 
 @media (max-width: 768px) {
-  .sticky-tab {
-    top: 10px; /* Адаптивное положение кнопки относительно нижней границы окна */
-    right: 60px; /* Адаптивное положение кнопки относительно правой границы окна */
-    padding: 12px 20px; /* Адаптивные отступы внутри кнопки */
-    font-size: 14px; /* Адаптивный размер текста на кнопке */
+  .modal-content {
+    width: 90%; /* Уменьшаем ширину до 90% для мобильных устройств */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  .close {
+    margin-left: 300px;
+    font-size: 40px; /* Уменьшаем размер крестика */
+    background-color: #ac1010;
+    border-radius: 50px;
+    width: 40px; /* Фиксированная ширина */
+    height: 40px;
+  }
+  .sticky-tab{
+    top: 40px
+  }
+
+  #modalImage {
+    margin-bottom: 15px; /* Уменьшаем нижний отступ для изображения */
+  }
+
+  #downloadLink {
+    padding: 8px 16px; /* Уменьшаем паддинги для ссылок */
+    font-size: 14px; /* Уменьшаем размер шрифта для текста в ссылках */
   }
 }
+
+/* Опционально, стили для очень маленьких экранов */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%; /* Делаем модальное окно ещё шире на очень маленьких экранах */
+  }
+
+  .close {
+    top: 5px;
+    right: 10px; /* Подгоняем положение кнопки закрытия */
+  }
+}
+
+/* @media (max-width: 768px) {
+  .sticky-tab {
+    top: 10px; 
+    right: 60px; 
+    padding: 12px 20px; 
+    font-size: 14px; 
+  }
+} */
 .sticky-tabN {
   position: fixed;
   top: 100px; /* Положение кнопки относительно верхней границы окна */
@@ -1861,7 +1901,7 @@ textarea::placeholder {
 
 .modal-content {
   background-color: #fefefe;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
   width: 40%;
   text-align: center;
@@ -1869,22 +1909,29 @@ textarea::placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 100;
 }
-
 .close {
-  color: #aaa;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  font-weight: bold;
+  margin-left: 600px;
+  font-size: 40px; /* Установленный размер шрифта для крестика */
+  background-color: #ac1010; /* Красный цвет фона */
+  border-radius: 50%; /* Сделать кнопку полностью круглой */
+  color: white; /* Цвет иконки крестика */
+  width: 50px; /* Фиксированная ширина */
+  height: 50px; /* Фиксированная высота */
+  display: flex;
+  align-items: center; /* Центрирование крестика по вертикали */
+  justify-content: center; /* Центрирование крестика по горизонтали */
+  cursor: pointer;
+  position: absolute; /* Важно, чтобы позиционировать относительно ближайшего positioned предка */
+  top: 10px;  /* Регулируйте смещение сверху, если необходимо */
+  right: 10px;  /* Регулируйте смещение справа, если необходимо */
+  z-index: 101; /* Выше, чем у .modal-content */
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  background-color: #f00; /* Светлый оттенок красного при наведении */
 }
 
 #modalImage {
@@ -1906,6 +1953,65 @@ textarea::placeholder {
 
 #downloadLink:hover {
   background-color: #e9e9e9;
+}
+.sticky-tab {
+  position: fixed;
+  top: 30px; /* Положение кнопки относительно нижней границы окна */
+  right: 20px; /* Положение кнопки относительно правой границы окна */
+  background-color: #ac1010; /* Цвет фона кнопки */
+  color: white; /* Цвет текста на кнопке */
+  padding: 15px 25px; /* Отступы внутри кнопки */
+  border-radius: 30px; /* Закругленные углы кнопки */
+  font-size: 16px; /* Размер текста на кнопке */
+  border: none; /* Убираем границу кнопки */
+  cursor: pointer; /* Курсор при наведении на кнопку */
+  z-index: 9999; /* Помещаем впереди остального контента */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Тень кнопки */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация при наведении на кнопку */
+}
+
+.sticky-tab:hover {
+  transform: translateY(-3px); /* Поднимаем кнопку немного при наведении */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+}
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Уменьшаем ширину до 90% для мобильных устройств */
+    padding: 10px; /* Уменьшаем отступы */
+  }
+
+  .close {
+    margin-left: 300px;
+    font-size: 40px; /* Уменьшаем размер крестика */
+    background-color: #ac1010;
+    border-radius: 50px;
+    width: 40px; /* Фиксированная ширина */
+    height: 40px;
+  }
+  .sticky-tab{
+    top: 40px
+  }
+
+  #modalImage {
+    margin-bottom: 15px; /* Уменьшаем нижний отступ для изображения */
+  }
+
+  #downloadLink, #downloadLink1, #downloadLink2, #downloadLink3 {
+    padding: 8px 16px; /* Уменьшаем паддинги для ссылок */
+    font-size: 14px; /* Уменьшаем размер шрифта для текста в ссылках */
+  }
+}
+
+/* Опционально, стили для очень маленьких экранов */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%; /* Делаем модальное окно ещё шире на очень маленьких экранах */
+  }
+
+  .close {
+    top: 5px;
+    right: 10px; /* Подгоняем положение кнопки закрытия */
+  }
 }
 
 :root {
@@ -2300,4 +2406,25 @@ body {
     color: #666;
     margin-bottom: 0;
   }
+}
+
+#scrollToTopBtn {
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ac1010;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #777;
 }
