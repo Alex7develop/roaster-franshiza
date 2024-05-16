@@ -925,12 +925,29 @@
           </div>
 
           <div class="form-right">
-            <form>
-              <input type="text" placeholder="Ваше имя*" required />
-              <input type="text" placeholder="Ваше телефон*" required />
-              <input type="text" placeholder="Ваше email" />
-              <textarea cols="30" rows="5" placeholder="Комментарий"></textarea>
-              <button class="def-btn form-button">Отправить</button>
+            <form
+              class="form"
+              action="https://formsubmit.co/alexanderkirilchuk@yandex.ru"
+              method="POST"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://elegant-malabi-b45d25.netlify.app"
+              />
+              <input type="name" name="name" placeholder="Ваше имя" />
+              <input type="number" name="number" placeholder="Ваше телефон" />
+              <input type="email" name="email" placeholder="Ваше email" />
+              <textarea
+                cols="30"
+                rows="5"
+                name="message"
+                placeholder="Комментарий"
+              ></textarea>
+              <button type="submit" class="def-btn form-button">
+                Отправить
+              </button>
             </form>
           </div>
         </div>
