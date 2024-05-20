@@ -184,17 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   // Весь ваш JavaScript код здесь
 
-  document.getElementById("downloadLink").addEventListener("click", function(event) {
+  // document.getElementById("downloadLink").addEventListener("click", function(event) {
 
-    event.preventDefault(); // Предотвращает переход по ссылке
-    var pdfPath = "pdf/roastercoffee.pdf"; // Укажите путь к вашей презентации PDF
-    var link = document.createElement("a");
-    link.href = pdfPath;
-    link.download = "roastercoffee.pdf"; // Имя файла для загрузки
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
+  //   event.preventDefault(); // Предотвращает переход по ссылке
+  //   var pdfPath = "pdf/roastercoffee.pdf"; // Укажите путь к вашей презентации PDF
+  //   var link = document.createElement("a");
+  //   link.href = pdfPath;
+  //   link.download = "roastercoffee.pdf"; // Имя файла для загрузки
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // });
 
   function openModal() {
     var modal = document.getElementById("myModal");
@@ -215,17 +215,17 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   // Весь ваш JavaScript код здесь
 
-  document.getElementById("downloadLink").addEventListener("click", function(event) {
+  // document.getElementById("downloadLink").addEventListener("click", function(event) {
 
-    event.preventDefault(); // Предотвращает переход по ссылке
-    var pdfPath = "pdf/roastercoffee.pdf"; // Укажите путь к вашей презентации PDF
-    var link = document.createElement("a");
-    link.href = pdfPath;
-    link.download = "roastercoffee.pdf"; // Имя файла для загрузки
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
+  //   event.preventDefault(); // Предотвращает переход по ссылке
+  //   var pdfPath = "pdf/roastercoffee.pdf"; // Укажите путь к вашей презентации PDF
+  //   var link = document.createElement("a");
+  //   link.href = pdfPath;
+  //   link.download = "roastercoffee.pdf"; // Имя файла для загрузки
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // });
 
   function openModal() {
     var modal = document.getElementById("myModal");
